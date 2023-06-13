@@ -2,15 +2,17 @@
 #include <stdio.h>
 #include <string.h>
 
-struct animal
+struct people
 {
    char names[10];
    int  age;
-}dog;
+   int  height;
+   int  id;
+}boy;
 
 
 
-
+``` c
 int main(){
    int age; 
    char name[50],sex[10];
@@ -35,15 +37,16 @@ int main(){
    printf("%d\n",&p);
    free(p);
 
-   struct animal dog,cat;
-   strcpy(dog.names, "Tom");
-   dog.age=1;
-   printf("my dog's name  is %s\n",dog.names);
-   printf("my dog's age   is %d year old",dog.age);
+   struct people p1,p2;
+   strcpy(p1.names, "Tom");
+   p1.age=10;
+   printf("First Person's name  is %s\n",p1.names);
+   printf("First Person's age   is %d years old",p1.age);
+   
 
 
 
 
 }
- 
+```
 
