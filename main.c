@@ -1,52 +1,41 @@
-#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#define DB_Size(s)              (s->length+16)
+typedef unsigned long           u64;  //size=4
+typedef unsigned int            u32;  //size=4
+typedef	unsigned short          u16;  //size=2
+typedef unsigned char           u8;   //size=1
+typedef u16                     ALENGTH_T;
+int f=99,g;
+u8 tempData[180];
+u16 unQueuedLength;
+u8 s[20]="aaabbbcccde";
+char s1[3]="fyn";
 
-struct people
+char  NV_Config_Static[959984709];
+char  *NV_Config_File      = NV_Config_Static;
+char *srce="1";
+
+typedef struct {
+  char mask[4];
+  int length;
+  int curr_pos;
+  char reserved[4];
+  char data[65536-16];
+} FILES;
+int main ()
 {
-   char names[10];
-   int  age;
-   int  height;
-   int  id;
-}boy;
-
-
-
-``` c
-int main(){
-   int age; 
-   char name[50],sex[10];
-
-   // printf("Enter your name:");  
-   // scanf("%s",name);   
-   // fflush(stdin);    // 清除輸入緩衝區
-
-   // printf("Enter your age:");
-   // scanf("%d",&age);  
-   // fflush(stdin);    // 清除輸入緩衝區
-
-   // printf("Enter your sex :");  
-   // scanf("%s",sex);   
-   
-   // printf("your input sex is :%s\n",name);
-   // printf("your input age is :%d\n",age);
-   // printf("your input sex is :%s\n",sex);
-
-   int *p;
-   p=(int *)(malloc(sizeof(int)));
-   printf("%d\n",&p);
-   free(p);
-
-   struct people p1,p2;
-   strcpy(p1.names, "Tom");
-   p1.age=10;
-   printf("First Person's name  is %s\n",p1.names);
-   printf("First Person's age   is %d years old",p1.age);
-   
-
-
-
-
+    memcpy(tempData,s,sizeof(u16)+unQueuedLength);
+    if (0x4000==16384)
+      s1[3]='\0';
+      FILES *f = (FILES *)srce;
+      FILES *j,*p;
+      printf("%d\n",sizeof(NV_Config_File));  //size of a pointer
+      printf("%d\n",sizeof(f));
+      printf("%d\n",sizeof(f->mask));
+      printf("%d\n",DB_Size(f));
+      printf("%d\n",DB_Size(p));
+      memcpy(NV_Config_File, srce, 959984709);
+      printf("%s\n",NV_Config_File);
+      
 }
-```
-
